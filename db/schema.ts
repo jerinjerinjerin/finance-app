@@ -34,7 +34,7 @@ export const transactions = pgTable("transactions", {
   amount: integer("amount").notNull(),
   payee: text("payee").notNull(),
   notes: text("notes"),
-  date: timestamp("data", { mode: "date" }).notNull(),
+  date: timestamp("date", { mode: "date" }).notNull(),
   accountId: text("account_id")
     .references(() => accounts.id, {
       onDelete: "cascade",
