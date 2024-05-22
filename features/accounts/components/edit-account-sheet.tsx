@@ -28,7 +28,7 @@ export const EditAccountSheet = () => {
 
     const [ConfirmDialog, confirm] = useConfirm(
         "Are you sure",
-        "you are about to delete this transaction."
+        "you are about to delete this account."
     )
 
 
