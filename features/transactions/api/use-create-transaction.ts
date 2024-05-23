@@ -20,7 +20,7 @@ export const useCreateTransaction = () => {
     >({
         mutationFn: async (json) => {
             const response = await client.api.transactions.$post({json});
-
+            
             return await response.json();
         },
         onSuccess: () => {
