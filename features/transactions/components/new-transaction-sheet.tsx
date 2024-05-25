@@ -101,7 +101,6 @@ export const NewTransactionSheet = () => {
                   accountOptions={accountOptions}
                   onCreateCategory={onCreateCategory}
                   onCreateAccount={onCreateAccount}
-       
                 />
             )
           }
