@@ -6,18 +6,19 @@ import {
   TableRow,
   TableHead
 } from "@/components/ui/table"
+import { TableHeadSelect } from "./table-head-select";
 
 type Props = {
     headers: string[];
     body: string[][];
-   selectedColumns: Record<string, string | null>;
+    selectedColumns: Record<string, string | null>;
     onTableHeadSelectChange: (columnIndex: number, value: string | null) => void;
 }
 
 export const ImportTable = ({
     headers,
     body,
-   selectedColumns,
+    selectedColumns,
     onTableHeadSelectChange,
 }:Props) => {
     return(
@@ -28,7 +29,11 @@ export const ImportTable = ({
                         {headers.map((header, index) => {
                             return(
                                 <TableHead key={index}>
-                                    {header}
+                                    <TableHeadSelect
+                                      columnIndex={index}
+                                      selectedColumns={selectedColumns}
+                                      onChange={onTableHeadSelectChange}
+                                    />
                                 </TableHead>
                             )
                         })}
